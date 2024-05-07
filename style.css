@@ -1,0 +1,152 @@
+html, body{
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    padding: 0;
+    margin: 0;
+    --dark : #1e1e1e;
+    --grey : #F2F5EA;
+    --blue : #4361EE;
+    --translution : rgba(0, 0, 0, 0.5);
+    background-color: #1A1B41;
+}
+i:hover,button:hover{
+    opacity: 0.8;
+}
+i:active,button:active{
+    opacity: 0.6;
+}
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: none;
+  }
+input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 2rem;
+}
+h1{
+    text-align: center;
+    color: white;
+    margin: 2.5rem 0;
+}
+.fa-plus-square{
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 3.5rem;
+    color: white;
+}
+.bookList{
+    position: relative;
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    place-items: center;
+}
+.books{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--grey);
+    width: 70%;
+    height: 26rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    margin: 0.8rem;
+}
+.books img{
+    background-color: var(--dark);
+    height: 15rem;
+    width: 10rem;
+    object-fit: contain;
+    border-radius: 1rem;
+}
+.books h3{
+    font-size: 0.8rem;
+}
+.books h4{
+    font-size: 0.6rem;
+    margin-top: -0.4rem;
+}
+.update-btn{
+    border: none;
+    background-color: var(--blue);
+    color: white;
+}
+.delete-btn{
+    border: none;
+}
+.popup{
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    justify-content: center;
+    place-items: center;
+    visibility: hidden;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background-color: var(--translution);
+    z-index: 2;
+}
+.container{
+    z-index: 3;
+}
+.container form{
+    border-radius: 2rem;
+    display: grid;
+    grid-template-columns: auto;
+    padding: 3rem 5rem;
+    background-color: white;
+}
+
+@media(max-width:1100px){
+    .bookList{
+        grid-template-columns: 32% 32% 32%;
+    }
+}
+@media(max-width:840px){
+    .bookList{
+        grid-template-columns: 50% 50%;
+    }
+    .books{
+        width: 80%;
+        padding: 1rem 4%;
+    }
+}
+@media(max-width:640px){
+    .books{
+        width: 85%;
+        padding: 1rem 5%;
+    }
+}

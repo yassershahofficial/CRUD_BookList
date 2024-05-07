@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book List</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/31c9cf090b.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <h1>BOOK LIST</h1>
+    <div>
+        <i class="fa fa-plus-square" onclick="togglePopup()" aria-hidden="true"></i>
+    </div>
+    
+    <div class="popup" id="popup">
+        <div class="container">
+            <form action="">
+                <label for="burl">Book Image URL:</label>
+                <input type="text" id="burl" name="burl" required>
+                <label for="bname">Book Name:</label>
+                <input type="text" id="bname" name="bname" required>
+                <label for="desc">Description:</label>
+                <textarea name="" id="" rows="5"></textarea>
+                <input type="submit" value="Add">
+            </form>
+        </div>
+        <div class="cover" onclick="togglePopup()"></div>
+    </div>
+
+    <div class="bookList">
+        <div class="books">
+            <img src="https://marketplace.canva.com/EAFfSnGl7II/2/0/1003w/canva-elegant-dark-woods-fantasy-photo-book-cover-vAt8PH1CmqQ.jpg" alt="">
+            <h3>Walk into The Shadow</h3>
+            <h4>
+                The Shifty Shadow that Transform Worlds
+                by Estelle Darcy
+            </h4>
+            <div>
+                <button class="update-btn">
+                    <p>Update</p>
+                </button>
+                <button class="delete-btn">
+                    <p>Delete</p>
+                </button>
+            </div>
+        </div>
+        <div class="books">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/art-book-cover-design-template-34323b0f0734dccded21e0e3bebf004c_screen.jpg?ts=1637015198" alt="">
+            <h3>The Book of Art</h3>
+            <h4>
+                Get Your Mind to The Abstract Art
+                by Regina Phalange
+            </h4>
+            <div>
+                <button class="update-btn">
+                    <p>Update</p>
+                </button>
+                <button class="delete-btn">
+                    <p>Delete</p>
+                </button>
+            </div>
+        </div>
+        <div class="books">
+            <img src="https://m.media-amazon.com/images/I/61XItmv2TcL.jpg" alt="">
+            <h3>Normal People</h3>
+            <h4>
+                An Analysis Detaillo
+                by Sally Rooney
+            </h4>
+            <div>
+                <button class="update-btn">
+                    <p>Update</p>
+                </button>
+                <button class="delete-btn">
+                    <p>Delete</p>
+                </button>
+            </div>
+        </div>
+        <div class="books">
+            <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/yellow-the-mind-of-a-leader-book-cover-design-template-f3cc2996f5f381d3d2d092e2d67337a4_screen.jpg?ts=1701277278" alt="">
+            <h3>The Mind of A Leader</h3>
+            <h4>
+                Great leaders are not necessary people who do great things
+                by Nouah Schumacher
+            </h4>
+            <div>
+                <button class="update-btn">
+                    <p>Update</p>
+                </button>
+                <button class="delete-btn">
+                    <p>Delete</p>
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="main.js"></script>
+</body>
+</html>
