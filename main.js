@@ -35,40 +35,53 @@ let formValidation = () => {
 }
 
 //temp storage 
-let data = {};
+let data = [];
 
 let formStore = () => {
-    data["URL"] = burl.value;
-    data["Name"] = bname.value;
-    data["Description"] = desc.value;
+    data.push({
+        URL: burl.value,
+        Name: bname.value,
+        Description: desc.value,
+    });
+    
+    localStorage.setItem("data", JSON.stringify(data));
+
     console.log(data);
     formCreate();
 }
 
 let formCreate = () => {
-    bookList.innerHTML += 
-    `
-    <div class="books">
-        <img src="${data.URL}" alt="">
-        <h3>${data.Name}</h3>
-        <h4>
-            ${data.Description}
-        </h4>
-        <div>
-            <button onclick="updateData(this)" class="update-btn">
-                <p>Update</p>
-            </button>
-            <button onclick="deleteData(this)" class="delete-btn">
-                <p>Delete</p>
-            </button>
+    bookList.innerHTML = "";
+    data.map((x,y) => {
+        return (bookList.innerHTML += 
+        `
+        <div class="books" id=${y}>
+            <img src="${x.URL}" alt="">
+            <h3>${x.Name}</h3>
+            <h4>
+                ${x.Description}
+            </h4>
+            <div>
+                <button onclick="updateData(this)" class="update-btn">
+                    <p>Update</p>
+                </button>
+                <button onclick="deleteData(this); autoRefresh()" class="delete-btn">
+                    <p>Delete</p>
+                </button>
+            </div>
         </div>
-    </div>
-    `
+        `)
+    })
+    
 }
 
 let deleteData = (e) => {
     e.parentElement.parentElement.remove();
+    data.splice(e.parentElement.parentElement.id, 1);
+    localStorage.setItem("data", JSON.stringify(data));
 }
+
+let autoRefresh = () => location.reload();
 
 let updateData = (e) => {
     togglePopup()
@@ -78,3 +91,7 @@ let updateData = (e) => {
     deleteData(e);
 }
 
+(() => {
+    data = JSON.parse(localStorage.getItem("data")) || [];
+    formCreate();
+})();
